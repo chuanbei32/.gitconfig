@@ -1,0 +1,100 @@
+[init]
+    defaultBranch = master
+
+[core]
+    editor = vim
+	filemode = false
+
+[user]
+    name = chuanbei32
+    email = chuanbei32@sina.com
+
+[format]
+  pretty = format:%h %Cblue%ad%Creset %an %Cgreen%s%Creset # 设置log格式，--oneline的输出不带作者和日期
+
+[diff]
+  ignoreSubmodules = dirty
+  
+[alias]
+    a = add
+    aa = add .
+
+
+    b = branch
+    ba = branch -a
+    bd = branch -d
+    bm = branch -m
+
+    bi = bisect
+
+    bl = blame
+
+
+    d = diff
+    dc = diff --cached
+
+
+    l = log
+    ll = log --oneline
+    lg = log --graph
+    llast = log -1 HEAD --stat   
+    lrecent = log -n 5 # 列出最近五次提交
+    ltoday = !git log    --after="6am"  # 列出今天的提交
+    lweek = !git log   --author $(git config user.email) --after="1.weeks" --date=short  # 列出当前作者这周的提交，周报专用
+
+
+    f = featch
+
+
+    r = remote
+    rv = remote -v
+
+
+    cm = commit
+    cmm = commit -m  
+    amend = commit --amend --reuse-message=HEAD # 合并当前缓冲内容到上一次的提交并复用提交信息
+    aamend = commit -a --amend --reuse-message=HEAD # 将修改过的文件添加到缓冲区合并到上一次提交并复用提交信息
+
+
+    co = checkout
+    cob = checkout -b
+
+
+    pl = pull
+    get = !git fetch --prune && git pull --rebase=preserve && git submodule update --init --recursive
+
+
+    ps = push
+    put = !git commit --all && git push
+    publish = "!git push -u origin $(git branch-name)" # 推送当前分支
+
+
+
+    st = status
+    sts = status -s
+
+    sh = show
+    shb = show-branch --more=10
+
+    ss = stash
+    ssl = stash list
+    ssp = stash pop
+    ssd = stash drop
+
+
+    rs = reset
+    uncommit = reset --soft HEAD~1 # 撤销上次提交
+
+
+    t = tag
+    td = tag -d
+
+    sub = submodule
+    subu = submodule update 
+    
+
+
+
+
+
+
